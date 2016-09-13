@@ -85,6 +85,7 @@ class BipedalWalker(gym.Env):
     }
 
     hardcore = False
+    self._STATES_ = range(4)
 
     def __init__(self):
         self._seed()
@@ -119,7 +120,7 @@ class BipedalWalker(gym.Env):
         self.joints = []
 
     def _generate_terrain(self, hardcore):
-        GRASS, STUMP, STAIRS, PIT, _STATES_ = range(5)
+        GRASS, STUMP, STAIRS, PIT = self._STATES_ # _STATES_ = range(5)
         state    = GRASS
         velocity = 0.0
         y        = TERRAIN_HEIGHT
@@ -215,7 +216,7 @@ class BipedalWalker(gym.Env):
             if counter==0:
                 counter = self.np_random.randint(TERRAIN_GRASS/2, TERRAIN_GRASS)
                 if state==GRASS and hardcore:
-                    state = self.np_random.randint(1, _STATES_)
+                    state = self.np_random.choice(self._STATES_[1:])
                     oneshot = True
                 else:
                     state = GRASS
@@ -488,6 +489,14 @@ class BipedalWalker(gym.Env):
 
 class BipedalWalkerHardcore(BipedalWalker):
     hardcore = True
+
+class BipedalWalkerStairs(BipedalWalker):
+    hardcore = True
+    _STATES_ = [0, 2]
+
+class BipedalWalkerPit(BipedalWalker):
+    hardcore = True
+    _STATES_ = [0, 3]
 
 if __name__=="__main__":
     # Heurisic: suboptimal, have no notion of balance.

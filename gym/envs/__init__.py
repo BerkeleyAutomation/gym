@@ -90,6 +90,17 @@ register(
     timestep_limit=500,
 )
 
+register(
+    id='AcrobotMass1-v1',
+    entry_point='gym.envs.classic_control:Acrobot_Mass1',
+    timestep_limit=500,
+)
+
+register(
+    id='AcrobotMass2-v1',
+    entry_point='gym.envs.classic_control:Acrobot_Mass2',
+    timestep_limit=500,
+)
 # Box2d
 # ----------------------------------------
 
@@ -117,6 +128,20 @@ register(
 register(
     id='BipedalWalkerHardcore-v2',
     entry_point='gym.envs.box2d:BipedalWalkerHardcore',
+    timestep_limit=2000,
+    reward_threshold=300,
+)
+
+register(
+    id='BipedalWalkerHardcoreStairs-v2',
+    entry_point='gym.envs.box2d:BipedalWalkerHardcoreStairs',
+    timestep_limit=2000,
+    reward_threshold=300,
+)
+
+register(
+    id='BipedalWalkerHardcorePit-v2',
+    entry_point='gym.envs.box2d:BipedalWalkerHardcorePit',
     timestep_limit=2000,
     reward_threshold=300,
 )
