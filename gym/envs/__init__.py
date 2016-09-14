@@ -133,15 +133,15 @@ register(
 )
 
 register(
-    id='BipedalWalkerHardcoreStairs-v2',
-    entry_point='gym.envs.box2d:BipedalWalkerHardcoreStairs',
+    id='BipedalWalkerStairs-v2',
+    entry_point='gym.envs.box2d:BipedalWalkerStairs',
     timestep_limit=2000,
     reward_threshold=300,
 )
 
 register(
-    id='BipedalWalkerHardcorePit-v2',
-    entry_point='gym.envs.box2d:BipedalWalkerHardcorePit',
+    id='BipedalWalkerPit-v2',
+    entry_point='gym.envs.box2d:BipedalWalkerPit',
     timestep_limit=2000,
     reward_threshold=300,
 )

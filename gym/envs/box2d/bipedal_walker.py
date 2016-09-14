@@ -85,7 +85,7 @@ class BipedalWalker(gym.Env):
     }
 
     hardcore = False
-    self._STATES_ = range(4)
+    _STATES_ = range(4)
 
     def __init__(self):
         self._seed()
@@ -120,7 +120,7 @@ class BipedalWalker(gym.Env):
         self.joints = []
 
     def _generate_terrain(self, hardcore):
-        GRASS, STUMP, STAIRS, PIT = self._STATES_ # _STATES_ = range(5)
+        GRASS, STUMP, STAIRS, PIT = range(4) # _STATES_ = range(5)
         state    = GRASS
         velocity = 0.0
         y        = TERRAIN_HEIGHT
