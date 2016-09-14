@@ -140,6 +140,13 @@ register(
 )
 
 register(
+    id='BipedalWalkerStump-v2',
+    entry_point='gym.envs.box2d:BipedalWalkerStump',
+    timestep_limit=2000,
+    reward_threshold=300,
+)
+
+register(
     id='BipedalWalkerPit-v2',
     entry_point='gym.envs.box2d:BipedalWalkerPit',
     timestep_limit=2000,

@@ -490,6 +490,10 @@ class BipedalWalker(gym.Env):
 class BipedalWalkerHardcore(BipedalWalker):
     hardcore = True
 
+class BipedalWalkerStump(BipedalWalker):
+    hardcore = True
+    _STATES_ = [0, 1]
+
 class BipedalWalkerStairs(BipedalWalker):
     hardcore = True
     _STATES_ = [0, 2]
